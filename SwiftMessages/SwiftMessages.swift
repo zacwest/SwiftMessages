@@ -79,8 +79,9 @@ open class SwiftMessages {
          status bar. The only alternative is to set `Config.prefersStatusBarHidden = true`
          to hide it.
         */
-        @available(iOS 13.0, *)
-        case windowScene(_: UIWindowScene, windowLevel: UIWindow.Level)
+        // NOTE: (zacwest fork) first parameter should be UIWindowScene
+        // see: https://github.com/SwiftKickMobile/SwiftMessages/issues/471
+        case windowScene(_: AnyObject, windowLevel: UIWindow.Level)
 
         /**
          Displays the message view under navigation bars and tab bars if an
